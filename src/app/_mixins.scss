@@ -1,0 +1,12 @@
+@mixin displayflex($flexDirection, $justifyContent, $alignItems) {
+    display: flex;
+    flex-direction: $flexDirection;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+  }
+  
+  @function get-size($total, $size) {
+    @return calc(#{$total} - #{$size});
+  }
+  
+  
