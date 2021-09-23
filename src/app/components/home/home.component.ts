@@ -10,8 +10,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+
   products:any[] =[];
-  selected_contact? : any;
+
+
+ 
+
+  categories = ['T-shirts', 'Shorts', 'Jeans','Vest', 'Jewelty', 'Shades','Caps', 'Hoody', 'Other']; 
+ 
 
   constructor(private __productService:StreetGearService, private route:Router) { }
 
@@ -29,13 +35,9 @@ export class HomeComponent implements OnInit {
 
 	}
 
-  onSelect(contact: any): void 
-  {
-    this.selected_contact = contact;
 
-    console.log(this.selected_contact);
 
-  }
+
 
 
 }

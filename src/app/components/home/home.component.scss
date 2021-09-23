@@ -14,6 +14,7 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
+
     }
     &__center {
         flex: 4;
@@ -61,7 +62,6 @@
         flex: 3;
         margin-top: 4rem;
         height: get-size(100vh, 4rem);
-        overflow-y: scroll;
         padding: 1rem;
     }
     &__mainbar {
@@ -71,12 +71,6 @@
         height: get-size(100vh, 4rem);
         overflow-y: scroll;
         background-color: var(--white);
-    }
-    &__rightbar {
-        flex: 3;
-        margin-top: 4rem;
-        height: get-size(100vh, 4rem);
-        overflow-y: scroll;
     }
 }
 
