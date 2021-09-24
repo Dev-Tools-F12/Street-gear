@@ -3,6 +3,12 @@ import {StreetGearService} from '../../../service/streetgear.service';
 import { Router } from '@angular/router';
 import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
 import { ProductComponent } from '../product/product.component';
+import { CartService } from 'src/service/cart.service';
+import { FormControl, FormGroup } from '@angular/forms';
+
+
+
+
 
 
 
@@ -25,7 +31,13 @@ export class HomeComponent implements OnInit {
   categories = ['T-shirts', 'Shorts', 'Jeans','Vest', 'Jewelty', 'Shades','Caps', 'Hoody', 'Other']; 
  
 
-  constructor(private __productService:StreetGearService, private route:Router, private modalService: MDBModalService) { }
+  constructor(private __productService:StreetGearService, private route:Router, private modalService: MDBModalService, public cart: CartService) { }
+
+	searchForm: any = new FormGroup({
+		search: new FormControl('')
+	})
+
+
 
   ngOnInit(): void 
   {

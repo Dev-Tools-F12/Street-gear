@@ -7,18 +7,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CartComponent } from './components/cart/cart.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AdminComponent,
-    CartComponent
+    CartComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,8 @@ import { CartComponent } from './components/cart/cart.component';
     MDBBootstrapModule.forRoot(),
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
