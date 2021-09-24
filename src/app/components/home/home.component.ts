@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {StreetGearService} from '../../../service/streetgear.service';
 import { Router } from '@angular/router';
+import { MDBModalRef, MDBModalService } from 'angular-bootstrap-md';
+import { ProductComponent } from '../product/product.component';
 
 
 
@@ -13,13 +15,17 @@ export class HomeComponent implements OnInit {
 
   products:any[] =[];
 
+  @ViewChild('basicModel') modal;
+	modalRef: MDBModalRef;
+
+
 
  
 
   categories = ['T-shirts', 'Shorts', 'Jeans','Vest', 'Jewelty', 'Shades','Caps', 'Hoody', 'Other']; 
  
 
-  constructor(private __productService:StreetGearService, private route:Router) { }
+  constructor(private __productService:StreetGearService, private route:Router, private modalService: MDBModalService) { }
 
   ngOnInit(): void 
   {
@@ -34,6 +40,18 @@ export class HomeComponent implements OnInit {
     })
 
 	}
+
+  
+
+
+  //my modal to add to cart
+	openModel(product) 
+  {
+   
+    this.__productService.setProduct(product);
+		this.modalRef = this.modalService.show(ProductComponent);
+	}
+
 
 
 

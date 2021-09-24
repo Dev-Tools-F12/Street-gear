@@ -58,7 +58,7 @@
           <!-- Product Card -->
           <div class="card" *ngFor="let product of products">
 
-            <div class="view zoom overlay">
+            <div (click)=openModel(product) class="view zoom overlay">
               <img class="img-fluid w-100" src={{product.image}} alt="Sample">
               <a href="#!">
                 <div class="mask">
@@ -101,6 +101,11 @@
 
 <!--End of Home div separated into two sections -->
 </div>
+
+
+
+
+
 
 
 

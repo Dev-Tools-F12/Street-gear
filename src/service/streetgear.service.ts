@@ -6,6 +6,8 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 
 export class StreetGearService 
 {
+	product_model:any;
+
 	constructor(private __http: HttpClient) { }
 
 	url = "http://localhost:3000/api/products";
@@ -18,5 +20,20 @@ export class StreetGearService
 	{
 		return this.__http.get(this.url);
 	}
+
+
+
+
+
+	//Model Setter and Getter
+	setProduct(product)
+	{
+	  this.product_model = product;
+	}
+	getProduct()
+	{
+	  return this.product_model;
+	}
+  
 
 }
