@@ -11,7 +11,6 @@ const routes: Routes = [
     { path: 'admin', component: AdminComponent },
 	{ path: 'product', component: ProductComponent },
 	{ path: 'cart', component: CartComponent },
-
 	
 	// Error page
 	{ path: '**', redirectTo: '/404' }
