@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {StreetGearService} from '../../../service/streetgear.service';
+import { CartService } from 'src/service/cart.service';
 
 
 @Component({
@@ -9,7 +10,7 @@ import {StreetGearService} from '../../../service/streetgear.service';
 })
 export class ProductComponent implements OnInit {
 
-  constructor(private __productService:StreetGearService) { }
+  constructor(private __productService:StreetGearService, private __cartService: CartService) { }
 
   iterm:any={};
 
@@ -21,7 +22,7 @@ export class ProductComponent implements OnInit {
 
 	addToCart(product: any)
   {
-		console.log(product);
+		this.__cartService.addProducCart(product)
 	}
 
 
