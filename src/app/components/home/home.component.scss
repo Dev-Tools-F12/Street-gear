@@ -4,7 +4,7 @@
     top: 0;
     height: 4rem;
     width: 100%;
-    background-color: var(--blue);
+    background-color: var(--teal);
     padding: 0 2rem;
     @include displayflex(row, space-between, center);
     &__left {
