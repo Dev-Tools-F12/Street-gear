@@ -1,0 +1,109 @@
+@import "../../mixins";
+.home {
+    width: 100%;
+    @include displayflex(row, space-between, left);
+    &__sidebar {
+        flex: 3;
+        margin-top: 4rem;
+        height: get-size(100%, 1rem);
+        overflow-y: scroll;
+    }
+    &__mainbar {
+        flex: 9;
+        margin-top: 4rem;
+        height: get-size(100vh, 4rem);
+        overflow-y: scroll;
+        justify-content: center;
+    }
+
+}
+
+
+
+.topbar {
+    position: fixed;
+    top: 0;
+    height: 4rem;
+    width: 100%;
+    background-color: var(--teal);
+    padding: 0 2rem;
+    @include displayflex(row, space-between, center);
+    &__left {
+        flex: 3;
+        color: var(--white);
+        .topbar__logo {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+    }
+    &__center {
+        flex: 4;
+        @include displayflex(row, flex-start, center);
+        gap: 1rem;
+        background-color: var(--white);
+        padding: 0.8rem 1rem;
+        border-radius: 0.5rem;
+        margin: 0 1rem;
+        .topbar__search {
+            flex: 1;
+            border: none;
+            outline: none;
+        }
+    }
+    &__right {
+        flex: 3;
+        color: var(--white);
+        @include displayflex(row, flex-end, center);
+        svg {
+            &:hover {
+                cursor: pointer;
+                color: #132342;
+            }
+        }
+        .cart__counter {
+            background-color: red;
+            border-radius: 50%;
+            padding: .1em .5em;
+            
+        }
+        .topbar__image {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            object-fit: cover;
+            border: solid 5px rgb(239, 239, 239);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+div.gallery {
+    margin: 5px;
+    justify-content: center;
+    width: 90%;
+
+
+  }
+  
+  div.gallery:hover {
+    border: 1px solid #777;
+  }
+  
+  div.gallery img {
+    width: 70%;
+    height: auto;
+    justify-content: center;
+  }
+  
+  div.desc {
+    padding: 15px;
+    text-align: center;
+  }

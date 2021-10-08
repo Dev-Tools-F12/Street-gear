@@ -1,1 +1,84 @@
-<p>admin works!</p>
+
+<div class="topbar">
+    <div class="topbar__left">
+        <div class="topbar__logo">
+            <a class="text-white" routerLink="/">Street Gear</a>
+        </div>
+    </div>
+
+    <a class="topbar__right" routerLink="/cart">
+        <a class="text-white" >Admin Section</a>
+    </a>
+</div>
+
+<div class="home">
+
+    <div class="home__sidebar">
+        <h4>List Of All Products</h4>
+        <div class="card" *ngFor="let product of products">
+            <div (click)=openModel(product,productDataUp)>
+                <div class="bottom">
+                    
+                    <h5 class="heading">{{product.name}}</h5>
+                    <div class="converse">{{product.category}}</div>
+                    <div class="price">R{{product.price}} </div>
+
+               </div>
+             </div>
+        </div>
+
+
+    </div>
+
+    <div class="home__mainbar">
+        <h4>Update Product</h4>
+        <div class="gallery">
+            <form #productDataUp="ngForm" validate>
+
+            <a target="_blank" >
+                <!-- <img name="image" ngModel src="https://cdn-images.farfetch-contents.com/13/15/90/66/13159066_15156285_1000.jpg"> -->
+
+                <img [src]="displayedImage" alt="">
+                
+            </a>
+           
+            
+            <div class="desc">
+
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">R</span>
+                    </div>
+                    <input name="price" type="text" ngModel class="form-control" placeholder="0" >
+                
+                  </div>
+                  
+
+    
+                  <div class="input-group mb-3">
+                    <input name="name" ngModel type="text" class="form-control" placeholder="Product name" >
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <input name="category" ngModel type="text" class="form-control" placeholder="Product Category" >
+                  </div>
+                  
+    
+
+
+                <button type="button" class="btn btn-warning">Update Product</button>
+                <br>
+                <br>
+                <button type="button" class="btn btn-danger">Delete Product</button>
+
+            </div>
+        </form>
+
+
+          </div>
+    </div>
+
+
+
+</div>

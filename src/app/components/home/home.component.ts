@@ -7,11 +7,6 @@ import { CartService } from 'src/service/cart.service';
 import { FormControl, FormGroup } from '@angular/forms';
 
 
-
-
-
-
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -23,9 +18,6 @@ export class HomeComponent implements OnInit {
 
   @ViewChild('basicModel') modal;
 	modalRef: MDBModalRef;
-
-
-
  
 
   categories = ['T-shirts', 'Shorts', 'Jeans','Vest', 'Jewelty', 'Shades','Caps', 'Hoody', 'Other']; 
@@ -53,8 +45,6 @@ export class HomeComponent implements OnInit {
 
 	}
 
-  
-
 
   //my modal to add to cart
 	openModel(product) 
@@ -63,11 +53,4 @@ export class HomeComponent implements OnInit {
     this.__productService.setProduct(product);
 		this.modalRef = this.modalService.show(ProductComponent);
 	}
-
-
-
-
-
-
-
 }
